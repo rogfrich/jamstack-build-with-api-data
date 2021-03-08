@@ -60,3 +60,18 @@ As we don't want to deploy our site as it will be rebuilt. Similarly the node st
 - Add our files: `git add .`
 - Commit them: `git commit -m "Initial Version"`
 
+## Setting it up on GitHub
+- Create the Repo (jamstack-build-with-api-data) on GitHub
+- Add the remote: `git remote add origin https://github.com/greywidget/jamstack-build-with-api-data.git`
+- Push the master branch to GitHub: `git push -u origin master`
+
+## Linking to Netlify
+- Go to Netlify Home and login.
+- Under Sites or Team Overview, click on the `New site from Git` button.
+- Click on the `GitHub` button and use the search button to find the repo.
+- If you can't see the repo, click the `Configure Netlify on GitHub` button. This will take you to a Netlify Page in GitHub where you can give Netlify access to all Repos or individual ones. You might need to scroll down to see the Repository access panel.
+- Not that when you return from GitHub to continue configuring the deployment in Netlify, you need to change a couple of settings to match how we have set this project up. 
+    - Set the *Build command* to `npm run build`
+    - Set the *Publish directory* to `dist`
+- Click the `Deploy site` button.
+
