@@ -9,7 +9,7 @@ This is based on Phil Hawskworth's third example from [this video](https://www.n
 - Create the eleventy config file `.eleventy.js`
 - Create a `src` folder for holding the source code, with a subdirectory `js` for any javascript.
 - Create folder `src/_includes`
-- Set up `base.njk` as the main template. Add a header with a link to the About Page...
+- Set up `base.njk` as the main template (in /_includes). Add a header with a link to the About Page...
 - Set up `index.njk` as the first page content (using `base.njk` as the layout)
 - Copy the `index.njk` to `about.njk` to be an about page.
 
@@ -45,3 +45,18 @@ module.exports = function(config) {
 You should now be able to run `npm run build` to get your site generated into the `dist` folder. Note that it generates and `about` folder for us to hold the *about* `index.html`
 
 And you can also now run `npm start` to get eleventy to serve pages.
+
+## Deploying
+The manual approach would be to run the build and the copy the stuff out of the _dist folder over to a hosting environment, but it is better to set it up to deploy automatically.
+
+- Add `.gitignore` and populate it thusly:
+```
+node_modules
+dist
+```
+As we don't want to deploy our site as it will be rebuilt. Similarly the node stuff will be rebuilt on the hosting site.
+
+- Initialise the Repo: `git init`
+- Add our files: `git add .`
+- Commit them: `git commit -m "Initial Version"`
+
